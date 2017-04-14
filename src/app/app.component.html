@@ -1,0 +1,7 @@
+<h1>
+  {{title}}
+  <br/>
+  <button (click)="addCard()" class="btn btn-default">Add a List....</button>
+</h1>
+<app-card *ngFor="let x of obj" [x]="x" [obj]="obj"> 
+</app-card>
