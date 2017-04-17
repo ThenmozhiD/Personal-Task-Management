@@ -22,8 +22,7 @@ key: string = "TaskList"
   }
   
   deleteCard(event){
-    alert("in");
-     var obj_id = event.target.parentNode.id.replace(/[^0-9]+/, '');      
+    var obj_id = event.target.parentNode.id.replace(/[^0-9]+/, '');      
         for (var i = 0; i < this.obj.length; i++) {
             if (this.obj[i] != null && this.obj[i].id == Number(obj_id)) {                   
                     //delete this.obj[i]["child"][j];

@@ -20,13 +20,15 @@ export class AppComponent {
 obj= this.taskDataService. getAllTasks();
   addCard(){
     var x= prompt('Add List Title....');
-
-    var Id =Date.now();
-    alert(x);
+    var Id =Date.now();    
     if(x != ""){
-       var new_data = {id:Id , title : x, "child": []};
+      var new_data = {id:Id , title : x, "child": []};
       this.obj.push(new_data);   
       this.taskDataService.updateLocalStorage(this.obj);
+    }
+
+    else{
+      alert("List Title Can't be empty. Please add list Title");      
     }
    
     
