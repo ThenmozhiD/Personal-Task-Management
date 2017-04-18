@@ -17,7 +17,6 @@ export class TaskDataService {
    this.tasks = tasks;   
    
   }
-
   
   updateLocalStorage(tasks){ 
     localStorage.setItem(this.key,JSON.stringify(tasks)); 

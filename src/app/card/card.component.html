@@ -1,7 +1,7 @@
 <div class="panel panel-primary ">
     <div class="task-list panel-heading" id="{{x.id}}">
       <span class="panel-title">{{x.title}}</span> 
-      <span class= "glyphicon glyphicon-remove" (click) = "deleteCard($event)"></span>    
+      <span class= "glyphicon glyphicon-remove" title="Delete" (click) = "deleteCard($event)"></span>    
 </div>
 
   <div class="wrapper" >
@@ -9,13 +9,13 @@
     <div *ngFor="let child of x.child" class="well well-sm" id = "{{child?.id}}" >
       <div id="{{child?.id}}childTitle" class= "childTitle" >
         <span> {{child?.title}} </span>
-        <span class= "glyphicon glyphicon-pencil" (click) = "editList($event)"></span> 
-        <span class= "glyphicon glyphicon-remove" (click) = "deleteList($event)"></span> 
+        <span class= "glyphicon glyphicon-pencil" title= "Edit" (click) = "editList($event)"></span> 
+        <span class= "glyphicon glyphicon-remove" title="Delete" (click) = "deleteList($event)"></span> 
         
       </div>
       
       <div id= "{{child?.id}}editTitle" class="editTitle">
-        <input  #editTitle type="text" placeholder="{{child?.title}}"  /> 
+        <input  #editTitle type="text" value="{{child?.title}}"  /> 
         <span class= "glyphicon glyphicon-ok" (click)= "saveEdit(editTitle.value, $event)"></span>         
         
       </div>
@@ -28,9 +28,9 @@
         <a href="#" (click)="displayIn()">Add a Card </a>
       </div>
       <div [ngClass]="{'input-group': toggleClass}">
-        <input #newTitle type="text" placeholder="Card Title.."  value="" />        
+        <input #newTitle type="text" placeholder="Card Title...."  value=""  maxlength="15"/>        
         <button class="btn btn-success" (click)= "addList(newTitle.value, $event)" id="{{x.id}}">Save</button>
-        <button class="btn btn-danger" (click)= "displayIn()">Cancel</button>
+        <button class="btn btn-danger" (click)= "displayIn()" >Cancel</button>
       </div>     
     </div>
 </div>
